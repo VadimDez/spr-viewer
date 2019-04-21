@@ -1,0 +1,30 @@
+{
+  "name": "spr-viewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors --port 9000 --watch --hot --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VadimDez/spr-viewer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VadimDez/spr-viewer/issues"
+  },
+  "homepage": "https://github.com/VadimDez/spr-viewer#readme",
+  "devDependencies": {
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.16.0",
+    "tslint-loader": "^3.5.4",
+    "typescript": "^3.4.4",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
+  }
+}
