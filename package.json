@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "webpack-dev-server --progress --colors --port 9000 --watch --hot --mode development",
-    "build": "webpack --mode production",
+    "build": "webpack webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
