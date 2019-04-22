@@ -6,13 +6,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>SPR Viewer</title>
+
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: 'Helvetica';
+    }
+
+    header {
+      padding: 20px;
+      background: #00A878;
+      color: #fff;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    header h1,
+    header h4 {
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .links {
+      padding-top: 12px;
+    }
+
+    section {
+      padding: 12px;
+    }
+
+    canvas {
+      margin-top: 12px;
+    }
+  </style>
 </head>
 
 <body>
-  <input type="file" accept=".spr" />
-  <div>
-    <canvas></canvas>
-  </div>
+  <header>
+    <h1>SPR Viewer</h1>
+    <h4>
+      It's an online tool to view sprite files (*.spr) in the browser.
+    </h4>
+
+    <div class="links">
+      <iframe src="https://ghbtns.com/github-btn.html?user=vadimdez&type=follow&count=true" frameborder="0"
+        scrolling="0" width="170px" height="20px"></iframe>
+      <iframe src="https://ghbtns.com/github-btn.html?user=vadimdez&repo=spr-viewer&type=star&count=true"
+        frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+      <iframe src="https://ghbtns.com/github-btn.html?user=vadimdez&repo=spr-viewer&type=fork&count=true"
+        frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+    </div>
+  </header>
+
+  <section>
+    <input type="file" accept=".spr" />
+    <div>
+      <canvas></canvas>
+    </div>
+  </section>
 
   <script src="bundle.js" type="text/javascript"></script>
 </body>
