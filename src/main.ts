@@ -6,9 +6,13 @@ window.onload = () => {
 
   $file.onchange = async () => {
     const data = (await getFileData($file.files[0])) as ArrayBuffer;
-    const sprite = Sprite.parse(data);
-    console.log(sprite.header);
-    console.log(sprite.frames);
+    let sprite;
+    try {
+      sprite = Sprite.parse(data);
+    } catch (e) {
+      alert(e);
+      return;
+    }
 
     const $canvas = document.querySelector("canvas");
     const context = $canvas.getContext("2d");
