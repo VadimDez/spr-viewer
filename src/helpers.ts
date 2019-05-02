@@ -26,6 +26,9 @@ export function paletteToRGBA(
     rgba[i * 4 + 1] = palette[pixels[i] * 3 + 1];
     rgba[i * 4 + 2] = palette[pixels[i] * 3 + 2];
     rgba[i * 4 + 3] = 255;
+    // if (rgba[i * 4] + rgba[i * 4 + 1] + rgba[i * 4 + 2] < 90) {
+    //   rgba[i * 4 + 3] = 0;
+    // }
   }
 
   return rgba;
@@ -36,8 +39,8 @@ export function paletteWithLastTransToRGBA(
   palette: Uint8Array
 ): Uint8Array {
   const rgba = new Uint8Array(pixels.length * 4);
-
   const len = pixels.length;
+
   for (let i = 0; i < len; ++i) {
     if (pixels[i] === 255) {
       rgba[i * 4 + 3] = 0;

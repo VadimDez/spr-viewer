@@ -74,6 +74,7 @@ export class Sprite {
     const palette = r.arrx(paletteSize * 3, ReaderDataType.UByte);
 
     const frames: SpriteFrame[] = [];
+
     for (let i = 0; i < header.frameCount; ++i) {
       const frame = {
         group: r.i(),

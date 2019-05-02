@@ -7,6 +7,7 @@ window.onload = () => {
   $file.onchange = async () => {
     const data = (await getFileData($file.files[0])) as ArrayBuffer;
     let sprite;
+
     try {
       sprite = Sprite.parse(data);
     } catch (e) {
@@ -40,6 +41,7 @@ function renderSprite(context, sprite) {
 function updateSize($canvas, frames) {
   let totalHeight = 0;
   let totalWidth = 0;
+  
   frames.forEach(frame => {
     totalHeight += frame.height;
     totalWidth = totalWidth > frame.width ? totalWidth : frame.width;
