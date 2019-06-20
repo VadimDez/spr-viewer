@@ -1,5 +1,5 @@
 # spr-viewer
-Online tool to view `*.spr` files in the browser
+Online tool to view sprite (`*.spr`) files in the browser
 
 ### [Try it here](https://vadimdez.github.io/spr-viewer/)
 
