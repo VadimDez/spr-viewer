@@ -22,14 +22,16 @@ export function paletteToRGBA(
 
   const len = pixels.length;
   for (let i = 0; i < len; ++i) {
-    rgba[i * 4] = palette[pixels[i] * 3];
-    rgba[i * 4 + 1] = palette[pixels[i] * 3 + 1];
-    rgba[i * 4 + 2] = palette[pixels[i] * 3 + 2];
+    rgba[i * 4] = palette[pixels[i] * 3] + 180;
+    rgba[i * 4 + 1] = palette[pixels[i] * 3 + 1] + 162;
+    rgba[i * 4 + 2] = palette[pixels[i] * 3 + 2] + 30;
     rgba[i * 4 + 3] = 255;
+
     // if (rgba[i * 4] + rgba[i * 4 + 1] + rgba[i * 4 + 2] < 90) {
     //   rgba[i * 4 + 3] = 0;
     // }
   }
+  console.log(rgba);
 
   return rgba;
 }
