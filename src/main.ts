@@ -1,11 +1,11 @@
-import { Sprite } from "./Sprite";
+import { Sprite, SpriteFrame } from "./Sprite";
 import { getFileData } from "./helpers";
 
 window.onload = () => {
   let $file = document.querySelector("input");
 
-  $file.onchange = async () => {
-    const data = (await getFileData($file.files[0])) as ArrayBuffer;
+  $file!.onchange = async () => {
+    const data = (await getFileData($file!.files![0]!)) as ArrayBuffer;
     let sprite;
 
     try {
@@ -16,17 +16,17 @@ window.onload = () => {
     }
 
     const $canvas = document.querySelector("canvas");
-    const context = $canvas.getContext("2d");
+    const context = $canvas!.getContext("2d");
 
-    updateSize($canvas, sprite.frames);
+    updateSize($canvas!, sprite.frames);
 
-    renderSprite(context, sprite);
+    renderSprite(context!, sprite);
   };
 };
 
-function renderSprite(context, sprite) {
+function renderSprite(context: CanvasRenderingContext2D, sprite: Sprite) {
   let lastHeight = 0;
-  sprite.frames.forEach(frame => {
+  sprite.frames.forEach((frame: SpriteFrame) => {
     const imgdata = context.createImageData(frame.width, frame.height);
     const length = frame.data.length;
 
@@ -38,10 +38,10 @@ function renderSprite(context, sprite) {
   });
 }
 
-function updateSize($canvas, frames) {
+function updateSize($canvas: HTMLCanvasElement, frames: SpriteFrame[]) {
   let totalHeight = 0;
   let totalWidth = 0;
-  
+
   frames.forEach(frame => {
     totalHeight += frame.height;
     totalWidth = totalWidth > frame.width ? totalWidth : frame.width;

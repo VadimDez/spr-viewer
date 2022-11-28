@@ -13,7 +13,7 @@ interface SpriteHeader {
   syncType: SpriteSyncType;
 }
 
-interface SpriteFrame {
+export interface SpriteFrame {
   group: number;
   position: number[];
   width: number;
