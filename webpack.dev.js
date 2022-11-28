@@ -1,12 +1,19 @@
 /**
  * Created by Vadym Yatsyuk on 22.04.19
  */
-const common = require('./webpack.config.js');
+const common = require("./webpack.config.js");
 module.exports = merge(common, {
-  entry: [
-    'webpack-dev-server/client?http://0.0.0.0:9000',
-    'webpack/hot/only-dev-server',
-    './src/main.ts'
-  ],
-  mode: 'development',
+  entry: "./src/main.ts",
+  mode: "development",
+  devtool: "inline-source-map",
+  devServer: {
+    static: "./dist",
+    hot: "only",
+    open: true,
+    client: {
+      logging: "info",
+      overlay: true,
+      progress: true,
+    },
+  },
 });

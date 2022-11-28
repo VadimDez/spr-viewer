@@ -1,4 +1,4 @@
-export const getFileData = file => {
+export const getFileData = (file: File) => {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
 
